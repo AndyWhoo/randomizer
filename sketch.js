@@ -223,7 +223,7 @@ let roster = [{
 function setup() {
 
   createCanvas(600, 600);
-  console.log(roster);
+  console.log(roster[1]);
 }
 
 
