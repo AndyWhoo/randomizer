@@ -244,7 +244,7 @@ text(roster[1].firstName, 10, 10, 70, 80);
 }
 
 function mousePressed (){
-  background(random(200, 225));
+  background(random(200, 210));
   randomIndex = int(random(roster.length));
   //console.log("random classmate's favorite color is" + random(roster).color);
   //console.log(roster[1].fact);
