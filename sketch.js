@@ -234,7 +234,7 @@ console.log(roster[1].fact);
 
 function draw() {
 fill(0);
-text(roster[1].firstName, 10, 10, 70, 80);
+text(roster[1].firstName, 40, 10, 70, 80);
 
   //background(220);
 
