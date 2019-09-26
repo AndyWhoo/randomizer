@@ -218,14 +218,11 @@ let roster = [{
 
 ];
 
-
+let randomIndex;
 
 function setup() {
 
   createCanvas(600, 600);
-
-
-console.log(roster[1].fact);
 
 }
 
@@ -242,8 +239,21 @@ text(roster[1].firstName, 10, 10, 70, 80);
 
   //ellipse(200, 200, 200, 200);
 
-  fill(210, 100, 50);
 
-  rect(60, 280, 400, 70);
+
+}
+
+function mousePressed (){
+  background(random(200, 225));
+  randomIndex = int(random(roster.length));
+  //console.log("random classmate's favorite color is" + random(roster).color);
+  //console.log(roster[1].fact);
+  text("random classmate's favorite color is " + random(roster).color, 50, 50);
+  //console.log(roster[randomIndex].firstName);
+  text(roster[randomIndex].firstName, 130, 20);
+  //console.log(roster.length);
+
+  roster.splice(randomIndex, 1);
+  //console.log(roster);
 
 }
