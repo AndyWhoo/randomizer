@@ -219,40 +219,85 @@ let roster = [{
 ];
 
 let randomIndex;
+let counter = 0;
+let animating = false;
 
 function setup() {
 
-  createCanvas(600, 600);
-
+  createCanvas(600, 600, /*WEBGL*/);
+  text("click to randomize", 50, 50);
+  textSize(16);
+  //setTimeout(changeBackground, 1000);
+  //setInterval(changeBackground, 1000);
 }
 
 
 
 
 function draw() {
-fill(0);
-text(roster[1].firstName, 10, 10, 70, 80);
+
+//text(roster[1].firstName, 10, 10, 70, 80);
 
   //background(220);
 
   //fill(20, 100, 255);
 
+  //ellipse(200, 200, 200, 200);
+ if(animating == true){
+   /*rotateX(frameCount * 0.05);
+     rotateY(frameCount * 0.01);*/
+   fill(255);
+  square(random(width),random(height), random(50, 150));
+  fill(0);
+  square(random(width),random(height), random(50, 150));
+ }
 
+
+}
+function changeBackground(){
+//   if (counter <= 5){
+//     counter++
+//   background(random(255), random(255), random(255));
+//   setTimeout(changeBackground, 1000);
+// } else {
+//
+// }
+}
+
+function randomizer(){
+  animating = false;
+    if (roster[0]) {
+      fill(0);
+    background(random(200, 210));
+    randomIndex = int(random(roster.length));
+    //console.log("random classmate's favorite color is" + random(roster).color);
+    //console.log(roster[1].fact);
+    //text("random classmate's favorite color is " + random(roster).color, 50, 50);
+    //console.log(roster[randomIndex].firstName);
+    textLeading(20);
+
+    textAlign(RIGHT);
+text("random classmate's favorite color is", 320, 170);
+textAlign(CENTER);
+    text(random(roster).color, 320, 220);
+textAlign(CENTER);
+    text(`${roster[randomIndex].firstName}'s favorite color is ${roster[randomIndex].color}`, 150, 200);
+    text(`${roster[randomIndex].lastName}`, 70, 220);
+    text(`${roster[randomIndex].animal}'s favorite book is ${roster[randomIndex].book}`, 200, 270);
+    
+
+    roster.splice(randomIndex, 1);
+  } else {
+    background(random(200, 255));
+    text("nothing left!", 50, 50);
+  }
+    //console.log(roster);
 
 
 }
 
 function mousePressed (){
-  background(random(200, 225));
-  randomIndex = int(random(roster.length));
-  //console.log("random classmate's favorite color is" + random(roster).color);
-  //console.log(roster[1].fact);
-  text("random classmate's favorite color is " + random(roster).color, 50, 50);
-  //console.log(roster[randomIndex].firstName);
-  text(roster[randomIndex].firstName, 130, 20);
-  //console.log(roster.length);
-
-  roster.splice(randomIndex, 1);
-  //console.log(roster);
+    animating = true; //assigning =
+    setTimeout(randomizer, 2000);
 
 }
