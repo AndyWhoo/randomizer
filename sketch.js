@@ -1,3 +1,5 @@
+let checkboxes = [];
+let button;
 let roster = [{
     firstName: "Zainib",
     lastName: "Ahmed",
@@ -229,6 +231,28 @@ function setup() {
   textSize(16);
   //setTimeout(changeBackground, 1000);
   //setInterval(changeBackground, 1000);
+  {
+  createCanvas(600, 600);
+  background(0);
+  button = createButton('click me');
+  button.position(19, 19);
+  button.mousePressed(buttonPressed);
+
+}
+function buttonPressed() {
+  let body;
+  body = select('body');
+  body.style('background-image','url("cupcakes1.jpg")')
+}
+
+
+  for(let i=1;i<100;i++)
+  checkboxes[i] = createCheckbox('')
+  checkbox[i].style('display','inline');
+  checkboxes[i].position(random(windowWidth),random(wondowHeight));
+
+
+
 }
 
 
@@ -284,7 +308,7 @@ textAlign(CENTER);
     text(`${roster[randomIndex].firstName}'s favorite color is ${roster[randomIndex].color}`, 150, 200);
     text(`${roster[randomIndex].lastName}`, 70, 220);
     text(`${roster[randomIndex].animal}'s favorite book is ${roster[randomIndex].book}`, 200, 270);
-    
+
 
     roster.splice(randomIndex, 1);
   } else {
@@ -299,5 +323,6 @@ textAlign(CENTER);
 function mousePressed (){
     animating = true; //assigning =
     setTimeout(randomizer, 2000);
+
 
 }

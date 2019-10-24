@@ -1,6 +1,10 @@
 html, body {
   margin: 0;
   padding: 0;
+  background-image: url("cupcakes1.jpg");
+background-color: #cccccc;
+background-image: url("cupcakes2.jpg");
+background-color: #cccccc;
 }
 canvas {
   display: block;
